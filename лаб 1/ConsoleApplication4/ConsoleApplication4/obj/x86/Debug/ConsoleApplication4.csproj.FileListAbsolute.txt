@@ -1,0 +1,5 @@
+D:\СТУДЕНТ\ФМФ\два ивана\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.exe
+D:\СТУДЕНТ\ФМФ\два ивана\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.pdb
+D:\СТУДЕНТ\ФМФ\два ивана\ConsoleApplication4\ConsoleApplication4\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\СТУДЕНТ\ФМФ\два ивана\ConsoleApplication4\ConsoleApplication4\obj\x86\Debug\ConsoleApplication4.exe
+D:\СТУДЕНТ\ФМФ\два ивана\ConsoleApplication4\ConsoleApplication4\obj\x86\Debug\ConsoleApplication4.pdb

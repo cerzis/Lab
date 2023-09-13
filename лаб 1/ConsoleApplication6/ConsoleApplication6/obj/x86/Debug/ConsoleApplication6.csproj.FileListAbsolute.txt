@@ -1,0 +1,5 @@
+D:\СТУДЕНТ\ФМФ\два ивана\ConsoleApplication6\ConsoleApplication6\bin\Debug\ConsoleApplication6.exe
+D:\СТУДЕНТ\ФМФ\два ивана\ConsoleApplication6\ConsoleApplication6\bin\Debug\ConsoleApplication6.pdb
+D:\СТУДЕНТ\ФМФ\два ивана\ConsoleApplication6\ConsoleApplication6\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\СТУДЕНТ\ФМФ\два ивана\ConsoleApplication6\ConsoleApplication6\obj\x86\Debug\ConsoleApplication6.exe
+D:\СТУДЕНТ\ФМФ\два ивана\ConsoleApplication6\ConsoleApplication6\obj\x86\Debug\ConsoleApplication6.pdb
