@@ -1,0 +1,92 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+
+        Console.Write("Введите значение a: ");
+        int a = int.Parse(Console.ReadLine());
+
+        Console.Write("Введите значение b: ");
+        int b = int.Parse(Console.ReadLine());
+
+
+        Console.Write("Введите длину первого массива: ");
+        int length1 = int.Parse(Console.ReadLine());
+
+
+        Console.Write("Введите длину второго массива: ");
+        int length2 = int.Parse(Console.ReadLine());
+
+
+        Console.Write("Введите длину третьего массива: ");
+        int length3 = int.Parse(Console.ReadLine());
+
+
+        int[] array1 = new int[length1];
+        int[] array2 = new int[length2];
+        int[] array3 = new int[length3];
+
+
+        Random random = new Random();
+        Random(array1, a, b, random);
+        Random(array2, a, b, random);
+        Random(array3, a, b, random);
+
+
+        bool otric1 = otric(array1);
+        bool otric2 = otric(array2);
+        bool otric3 = otric(array3);
+
+        if (otric1)
+        {
+            Console.WriteLine("Отрицательные элементы в массиве 1 присутсвуют");
+        }
+        else
+        {
+            Console.WriteLine("Отрицательные элементы в массиве 1 отсутсвуют");
+        }
+        if (otric2)
+        {
+            Console.WriteLine("Отрицательные элементы в массиве 2 присутсвуют");
+        }
+        else
+        {
+            Console.WriteLine("Отрицательные элементы в массиве 2 отсутсвуют");
+        }
+        if (otric3)
+        {
+            Console.WriteLine("Отрицательные элементы в массиве 3 присутсвуют");
+        }
+        else
+        {
+            Console.WriteLine("Отрицательные элементы в массиве 3 отсутсвуют");
+        }
+
+
+    }
+
+    static void Random(int[] array, int minValue, int maxValue, Random random)
+    {
+       
+        for (int i = 0; i < array.Length; i++)
+        {
+            array[i] = random.Next(minValue, maxValue + 1);
+        }
+    }
+
+    static bool otric (int[] array)
+    {
+       
+        foreach (int num in array)
+        {
+            if (num < 0)
+            {
+                return true; 
+            }
+        }
+        return false;
+    }
+}
+
