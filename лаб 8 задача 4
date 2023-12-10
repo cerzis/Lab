@@ -1,0 +1,51 @@
+using System;
+
+class Program
+{
+    static void TimeToHMS(int T, out int H, out int M, out int S)
+    {
+        
+        H = T / 3600;  
+        M = (T % 3600) / 60;  
+        S = T % 60;  
+    }
+
+    static void Main()
+    {
+        Console.WriteLine("Введите T1");
+        int T1 ;  
+        T1=int.Parse(Console.ReadLine());
+        Console.WriteLine("Введите T2");
+        int T2;
+        T2 = int.Parse(Console.ReadLine());
+        Console.WriteLine("Введите T3");
+        int T3;
+        T3 = int.Parse(Console.ReadLine());
+        Console.WriteLine("Введите T4");
+        int T4;
+        T4 = int.Parse(Console.ReadLine());
+        Console.WriteLine("Введите T5");
+        int T5;
+        T5 = int.Parse(Console.ReadLine());
+
+
+        int H1, M1, S1;
+        int H2, M2, S2;
+        int H3, M3, S3;
+        int H4, M4, S4;
+        int H5, M5, S5;
+
+       
+        TimeToHMS(T1, out H1, out M1, out S1);
+        TimeToHMS(T2, out H2, out M2, out S2);
+        TimeToHMS(T3, out H3, out M3, out S3);
+        TimeToHMS(T4, out H4, out M4, out S4);
+        TimeToHMS(T5, out H5, out M5, out S5);
+
+        Console.WriteLine($"T1: {H1} часов, {M1} минут, {S1} секунд");
+        Console.WriteLine($"T2: {H2} часов, {M2} минут, {S2} секунд");
+        Console.WriteLine($"T3: {H3} часов, {M3} минут, {S3} секунд");
+        Console.WriteLine($"T4: {H4} часов, {M4} минут, {S4} секунд");
+        Console.WriteLine($"T5: {H5} часов, {M5} минут, {S5} секунд");
+    }
+}
