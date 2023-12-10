@@ -1,0 +1,39 @@
+
+class Program
+{
+    static double Hypotenuse(double side1, double side2)
+    {
+       
+        return Math.Sqrt(side1 * side1 + side2 * side2);
+    }
+
+    static double Perimeter(double AB, double AC, double CD)
+    {
+        
+        double BC = Hypotenuse(AB, AC);
+
+       
+        double BD = Hypotenuse(BC, CD);
+
+       
+        double perimeter = AB + AC + CD + BD;
+
+        return perimeter;
+    }
+
+    static void Main()
+    {
+        Console.WriteLine("Введите сторону AB");
+        double AB ;
+        AB = int.Parse(Console.ReadLine());
+        Console.WriteLine("Введите сторону AC");
+        double AC ;
+        AC = int.Parse(Console.ReadLine());
+        Console.WriteLine("Введите сторону CD");
+        double CD ;
+        CD = int.Parse(Console.ReadLine());
+
+        double perimeterABCD = Perimeter(AB, AC, CD);
+        Console.WriteLine("Периметр фигуры ABCD: " + perimeterABCD);
+    }
+}
