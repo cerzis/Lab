@@ -1,0 +1,39 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+       
+        Console.Write("Введите натуральное число n: ");
+        int n = int.Parse(Console.ReadLine());
+
+      
+        int min = minn(n);
+
+       
+        Console.WriteLine($"Наименьшая цифра в числе {n}: {min}");
+    }
+
+    static int minn (int number)
+    {
+        int min = 9; 
+
+       
+        while (number > 0)
+        {
+            int digit = number % 10; 
+
+          
+            if (digit < min)
+            {
+                min = digit;
+            }
+
+            number /= 10; 
+        }
+
+        return min;
+    }
+}
+
