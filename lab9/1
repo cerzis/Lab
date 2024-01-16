@@ -1,0 +1,51 @@
+using System;
+
+class Triangle
+{
+    
+    private double a, b, c;
+
+    
+    public Triangle(double sideA, double sideB, double sideC)
+    {
+        a = sideA;
+        b = sideB;
+        c = sideC;
+    }
+
+    
+    public string GetTriangleType()
+    {
+        if (a == b && b == c)
+            return "Равносторонний треугольник";
+        else if (a == b || b == c || a == c)
+            return "Равнобедренный треугольник";
+        else
+            return "Разносторонний треугольник";
+    }
+
+ 
+    public void DisplayInfo()
+    {
+        Console.WriteLine($"Сторона a: {a}");
+        Console.WriteLine($"Сторона b: {b}");
+        Console.WriteLine($"Сторона c: {c}");
+        Console.WriteLine($"Тип треугольника: {GetTriangleType()}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        int a, b, c;
+        Console.WriteLine( "Введите стороны треугольника" );
+        a = Convert.ToInt32(Console.ReadLine());
+        b = Convert.ToInt32(Console.ReadLine());
+        c = Convert.ToInt32(Console.ReadLine());
+       
+        Triangle triangle = new Triangle(a, b, c);
+
+        triangle.DisplayInfo();
+    }
+}
