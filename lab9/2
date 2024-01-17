@@ -1,0 +1,76 @@
+using System;
+
+class Triangle
+{
+    // Поля класса
+    private double a, b, c;
+
+    
+    public Triangle(double sideA, double sideB, double sideC)
+    {
+        a = sideA;
+        b = sideB;
+        c = sideC;
+    }
+
+    
+    public string GetTriangleType()
+    {
+        if (a == b && b == c)
+            return "Равносторонний треугольник";
+        else if (a == b || b == c || a == c)
+            return "Равнобедренный треугольник";
+        else
+            return "Разносторонний треугольник";
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine( "Введите кол-во треугольников ");
+        int N = Convert.ToInt32(Console.ReadLine());
+
+      
+        Triangle[] triangles = new Triangle[N];
+        for (int i = 0; i < N; i++) 
+        {
+            Console.WriteLine( "Введите стороны треугольника");
+            int a = Convert.ToInt32(Console.ReadLine());
+            int b = Convert.ToInt32(Console.ReadLine());
+            int c = Convert.ToInt32(Console.ReadLine());
+            triangles[i] = new Triangle(a, b, c);
+        }
+       
+        int k1 = 0; 
+        int k2 = 0; 
+        int k3 = 0; 
+
+        
+        foreach (var Triangle in triangles)
+        {
+           
+            string type = Triangle.GetTriangleType();
+
+            
+            switch (type)
+            {
+                case "Разносторонний треугольник":
+                    k1++;
+                    break;
+                case "Равнобедренный треугольник":
+                    k2++;
+                    break;
+                case "Равносторонний треугольник":
+                    k3++;
+                    break;
+            }
+        }
+
+       
+        Console.WriteLine($"Количество разносторонних треугольников: {k1}");
+        Console.WriteLine($"Количество равнобедренных треугольников: {k2}");
+        Console.WriteLine($"Количество равносторонних треугольников: {k3}");
+    }
+}
