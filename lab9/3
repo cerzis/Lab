@@ -2,7 +2,7 @@ using System;
 
 class Triangle
 {
-    // Поля класса
+    
     private double a, b, c;
     public double A
     {
@@ -17,7 +17,7 @@ class Triangle
             else
             {
                 Console.WriteLine("Значение должно быть положительным.");
-                c = 0;
+                
             }   
             
         }
@@ -36,7 +36,7 @@ class Triangle
             else
             {
                 Console.WriteLine("Значение должно быть положительным.");
-                c = 0;
+           
             }
         }
     }
@@ -54,7 +54,7 @@ class Triangle
             else
             {
                 Console.WriteLine("Значение должно быть положительным.");
-                c = 0;
+                
             }
         }
     }
