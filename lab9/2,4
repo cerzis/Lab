@@ -1,0 +1,119 @@
+using System;
+
+class Straight
+{
+    private double x1, y1, x2, y2;
+
+  
+    public double X1
+    {
+        get
+        {
+            return x1;
+        }
+        set
+        {
+            x1 = value;
+        }
+    }
+
+    public double Y1
+    {
+        get
+        {
+            return y1;
+        }
+        set
+        {
+            y1 = value;
+        }
+    }
+
+    public double X2
+    {
+        get
+        {
+            return x2;
+        }
+        set
+        {
+            x2 = value;
+        }
+    }
+
+    public double Y2
+    {
+        get
+        {
+            return y2;
+        }
+        set
+        {
+            y2 = value;
+        }
+    }
+
+    public Straight(double x1, double y1, double x2, double y2)
+    {
+        X1 = x1;
+        Y1 = y1;
+        X2 = x2;
+        Y2 = y2;
+    }
+
+    
+    public void Print()
+    {
+        
+        if (X1 != X2)
+        {
+            double a = (Y2 - Y1) / (X2 - X1);
+            double b = Y1 - a * X1;
+
+            Console.WriteLine($"Уравнение прямой: y = {a}x + {b}");
+        }
+        else
+        {
+            Console.WriteLine("Уравнение прямой не может быть определено (деление на ноль).");
+        }
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Введите количество прямых N: ");
+        int N = int.Parse(Console.ReadLine());
+
+        
+        Straight[] straights = new Straight[N];
+
+        
+        for (int i = 0; i < N; i++)
+        {
+            Console.WriteLine($"Введите координаты точек для прямой {i + 1}:");
+            Console.Write("Введите координату x1: ");
+            double x1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Введите координату y1: ");
+            double y1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Введите координату x2: ");
+            double x2 = double.Parse(Console.ReadLine());
+
+            Console.Write("Введите координату y2: ");
+            double y2 = double.Parse(Console.ReadLine());
+
+            
+            straights[i] = new Straight(x1, y1, x2, y2);
+        }
+
+        
+        Console.WriteLine("\nУравнения прямых:");
+        foreach (var straight in straights)
+        {
+            straight.Print();
+        }
+    }
+}
