@@ -1,0 +1,60 @@
+using System;
+
+class Student
+{
+    public string FullName { get; set; }
+    public char Gender { get; set; }
+    public int BirthYear { get; set; }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Введите количество школьников (N): ");
+        int N = int.Parse(Console.ReadLine());
+
+       
+        Student[] students = new Student[N];
+
+        
+        for (int i = 0; i < N; i++)
+        {
+            students[i] = new Student();
+
+            Console.WriteLine($"Введите информацию о школьнике {i + 1}:");
+
+            Console.Write("Ф.И.О.: ");
+            students[i].FullName = Console.ReadLine();
+
+            Console.Write("Пол (М/Ж): ");
+            students[i].Gender = char.Parse(Console.ReadLine().ToUpper());
+
+            Console.Write("Год рождения: ");
+            students[i].BirthYear = int.Parse(Console.ReadLine());
+        }
+
+        
+        int mkol = 0;
+        int fkol = 0;
+
+        Console.WriteLine("Список школьников:");
+
+        foreach (var student in students)
+        {
+            Console.WriteLine($"{student.FullName}, Пол: {student.Gender}, Год рождения: {student.BirthYear}");
+
+            if (student.Gender == 'М')
+            {
+                mkol++;
+            }
+            else if (student.Gender == 'Ж')
+            {
+                fkol++;
+            }
+        }
+
+        Console.WriteLine($"Количество мальчиков:" + mkol);
+        Console.WriteLine($"Количество девочек:" + fkol);
+    }
+}
