@@ -1,0 +1,120 @@
+using System.Text.RegularExpressions;
+
+namespace _5._1
+
+{
+
+    class Student
+
+    {
+        public string Name;
+        public string Group;
+        public double Inf;
+        public double Physics;
+        public double History;
+        public Student(string name , string group , double inf , double physics, double history) 
+        {
+            this.Name = name;
+            this.Group = group;
+            this.Inf = inf;
+            this.Physics = physics;
+            this.History = history;
+        }
+        public double Avg()
+        {
+            return (Inf+History+Physics)/3;
+
+        }
+       
+
+    }
+
+
+
+    class Program
+
+    {
+        static void Main()
+
+        {
+            int k = 0;
+
+            Console.Write("Введите количество студентов: ");
+            int n = int.Parse(Console.ReadLine());
+            Student[] st = new Student[n];
+           for (int i = 0; i < n; i++)
+            { 
+
+                Console.WriteLine($"Введите информацию о студенте {i + 1}:");
+             
+                Console.Write("ФИО:");
+                string name = Console.ReadLine();
+                Console.Write("Группа:");
+                string group = Console.ReadLine();
+                Console.Write("Оценка по Информатике: ");
+                double inf = double.Parse(Console.ReadLine());
+                Console.Write("Оценка по Физике: ");
+                double physics = double.Parse(Console.ReadLine());
+               Console.Write("Оценка по Истории: ");
+                double history = double.Parse(Console.ReadLine());
+                st[i] = new Student(name, group , inf ,physics, history);
+
+            }
+
+            Console.WriteLine("\n{0,-30} {1,-10} {2,-15} {3,-10} {4,-10}", "ФИО", "Группа", "Информатика", "Физика", "История");
+            foreach (var student in st)
+            {
+                Console.WriteLine("{0,-30} {1,-10} {2,-15:F1} {3,-10:F1} {4,-10:F1}", student.Name, student.Group, student.Inf, student.Physics, student.History);
+            }
+
+            double avgin = 0, avgfiz = 0, avgist = 0;
+
+            foreach (var student in st)
+            {
+
+                avgin += student.Inf;
+
+                avgfiz += student.Physics;
+
+                avgist += student.History;
+
+                if (student.Avg()   > 4)
+
+                {
+                    k++;
+                }
+
+            }
+            avgin /= n;
+           avgfiz /= n;
+           avgist /= n;
+            
+            Console.WriteLine($"Средний балл по Информатике: {avgin}");
+            Console.WriteLine($"Средний балл по Физике: {avgfiz}");
+
+            Console.WriteLine($"Средний балл по Истории: {avgist}");
+
+            Console.WriteLine($"Студентов средний балл которых больше 4: {k}");
+
+            Console.WriteLine("Сведения о них:");
+            Console.WriteLine("{0,-30} {1,-10} {2,-15} {3,-10} {4,-10}", "ФИО", "Группа", "Информатика", "Физика", "История");
+
+            foreach (var student in st)
+
+            {
+                double avg = student.Avg();
+                if (avg > 4)
+
+                {
+
+                  Console.WriteLine("{0,-30} {1,-10} {2,-15:F1} {3,-10:F1} {4,-10:F1}", student.Name, student.Group, student.Inf, student.Physics, student.History);
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
